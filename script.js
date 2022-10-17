@@ -20,7 +20,6 @@ function complete() {
     quoteContainer.hidden = false;
 }
 
-
 //Show new quote
 function newQuote() {
     loading();
@@ -54,6 +53,7 @@ async function getQuotes() {
         apiQuotes = await response.json();
         newQuote();
     } catch (error) {
+        newQuote();
         console.log('Fetch quotes error:', error);
         //Catch Error Here
     }
